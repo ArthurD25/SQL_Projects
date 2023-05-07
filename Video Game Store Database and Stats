@@ -1,0 +1,34 @@
+--Create a video game store database
+
+Create Table game_store (id Integer Primary Key, name text, price Integer, rating Integer, system text);
+
+Insert into game_store Values ( 1, "Halo 6", 60, 3, "Xbox Series X");
+Insert into game_store Values ( 2, "God of War", 80, 5, "Playstation 5");
+Insert into game_store Values ( 3, "Call of Duty", 70, 2, "Playstation 5");
+Insert into game_store Values ( 4, "NBA 2K23", 62, 3, "Xbox Series X");
+Insert into game_store Values ( 5, "Spider-Man", 90, 4, "Playstation 5");
+Insert into game_store Values ( 6, "Mario Kart 8", 30, 3.5, "Nintendo Switch");
+Insert into game_store Values ( 7, "Legend of Zelda", 100, 4, "Nintendo Switch");
+Insert into game_store Values ( 8, "Street Fighter 6", 80, 4, "Xbox Series X");
+Insert into game_store Values ( 9, "Pokemon", 40, 4.2, "Nintendo Switch");
+Insert into game_store Values ( 10, "Bloodborne", 59, 4, "Playstation 5");
+Insert into game_store Values ( 11, "Last of Us Part 2", 75, 5, "Playstion 5");
+Insert into game_store Values ( 12, "MLB the Show 23", 60, 3, "Playstation 5");
+Insert into game_store Values ( 13, "Grand Theft Auto", 20, 3.5, "Xbox Series X");
+Insert into game_store Values ( 14, "Tekken 8", 95, 3, "Playstation 5");
+Insert into  game_store Values ( 15, "Final Fantasy 15", 55, 3, "Xbox Series X");
+
+--display the database ordered by price
+SELECT * FROM game_store
+Order By price;
+
+--what is the avg price of games on Playstation 5
+Select AVG(price) as avg_playstion5_game_total
+From game_store
+Where system = "Playstation 5";
+
+--what are the 5 highest rated video games
+SELECT name, price, rating
+From game_store
+order by rating desc
+limit 5;
